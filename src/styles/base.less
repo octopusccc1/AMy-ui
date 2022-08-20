@@ -1,0 +1,306 @@
+@import "../../source/assets/css/index";
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  -webkit-font-smoothing: antialiased;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+  height: 0;
+  background-color: #fff;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background-color: rgba(153, 153, 153, 0.6);
+}
+
+@media screen and (max-width: 1125px) {
+  .slider-container {
+    display: none;
+  }
+}
+
+//小屏下的drawer按钮位置调整
+.drawer-handle {
+  /* stylelint-disable-next-line */
+  top: 144px !important;
+}
+
+//主站样式
+.app {
+
+  //顶部fixed
+  .fixed-header-layout {
+    >.fishd-affix {
+      z-index: 11;
+    }
+  }
+
+  .fish-header {
+    z-index: 1;
+    height: 64px;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 2px 9px 0 rgba(37, 38, 94, 0.1);
+    color: #fff;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: relative;
+
+    @media (max-width: @screen-lg) {
+      height: 128px;
+    }
+
+    .header-title {
+      text-align: left;
+
+      img {
+        height: 36px;
+        margin: 13px 0 13px 24px;
+      }
+    }
+
+    h1 {
+      position: relative;
+      margin: 0;
+      float: left;
+      padding-left: 40px;
+      height: 24px;
+      line-height: 24px;
+      font-size: 16px;
+      color: #45474d;
+      font-weight: bold;
+
+      a {
+        text-decoration: none;
+        font-size: 16px;
+        color: #383838;
+        letter-spacing: 0;
+        text-align: center;
+        display: block;
+      }
+
+      img {
+        vertical-align: sub;
+        pointer-events: none;
+      }
+    }
+
+    .search-box {
+      float: left;
+      height: 22px;
+      line-height: 22px;
+      padding-left: 60px;
+      margin: 22px auto 0;
+
+      input {
+        font-family: "PingFangSC-Medium";
+        padding: 0;
+        font-size: 14px;
+        margin-top: -5px;
+        width: 200px;
+        border: 0;
+        box-shadow: none;
+        box-sizing: border-box;
+        list-style: none;
+        position: relative;
+        display: inline-block;
+        height: 32px;
+        line-height: 1.5;
+        color: rgba(0, 0, 0, 0.65);
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 4px;
+        transition: all 0.3s;
+
+        &::placeholder {
+          color: #777;
+        }
+      }
+
+      input:focus {
+        outline: 0;
+      }
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      float: right;
+      line-height: 64px;
+      height: 64px;
+      background: transparent;
+      padding: 0;
+      margin: 0 40px 0 0;
+    }
+
+    @media screen and (max-width: @screen-md) {
+      .nav {
+        display: none;
+      }
+    }
+
+    //层级关系需要保留，作样式覆盖
+    /* stylelint-disable */
+    .nav-item {
+      font-family: "PingFangSC-Regular";
+      font-size: 16px;
+      margin: 0 0 0 20px;
+      float: left;
+      list-style: none;
+      position: relative;
+      cursor: pointer;
+
+      &:last-child {
+        cursor: default;
+        margin-left: 34px;
+      }
+
+      .nav-lang {
+        cursor: pointer;
+        display: inline-block;
+        height: 100%;
+
+        &.active {
+          font-weight: 700;
+          opacity: 1;
+          font-size: 16px;
+          color: @text-9;
+        }
+      }
+
+      a {
+        text-decoration: none;
+        color: #383838;
+        display: block;
+        padding: 0 10px;
+        transition: all ease 0.3s;
+
+        &.active,
+        &:hover {
+          color: @primary-color;
+
+          &:before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: @primary-color;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+          }
+        }
+      }
+    }
+
+    .nav-version {
+      font-family: "PingFangSC-Medium";
+      background: @primary-color;
+      font-size: 12px;
+      color: #fff;
+      height: 20px;
+      line-height: 20px;
+      border-radius: 46px;
+      margin-left: 20px;
+      margin-right: 20px;
+      padding: 0 20px;
+    }
+
+    .u-github {
+      display: flex;
+      align-items: center;
+    }
+
+    /* stylelint-enable */
+  }
+
+  .main {
+    min-height: 500px;
+  }
+
+  .footer {
+    background-color: #292c33;
+    text-align: center;
+
+    .logo {
+      padding: 55px 0 22px;
+
+      img {
+        width: 40px;
+      }
+
+      h3 {
+        font-size: 24px;
+        color: #d2d3d6
+      }
+
+      .version {
+        font-size: 13px;
+        color: #65676e;
+      }
+    }
+
+    .link-item {
+      font-size: 14px;
+      color: #fff;
+      font-family: PingFangSC-Regular;
+      display: inline-block;
+      min-width: 56px;
+      margin-bottom: 50px;
+      text-decoration: none;
+
+      &:not(:last-child) {
+        margin-right: 50px;
+      }
+    }
+
+    .github {
+      font-family: PingFangSC-Regular;
+      border-top: 1px solid #404349;
+      padding: 15px 0;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center
+      }
+
+      img {
+        height: 20px;
+        position: relative;
+      }
+
+      span {
+        display: inline-block;
+        margin-left: 8px;
+        font-size: 16px;
+        color: #fff;
+      }
+    }
+  }
+}
+
+//img-icon-gen
+.img-icon-gen(@size) {
+  .img-icon-@{size} {
+    display: inline-block;
+    vertical-align: baseline;
+    width:~'@{size}px';
+    height:~'@{size}px';
+  }
+}
+
+.img-icon-gen(18);
+.img-icon-gen(16);
+.img-icon-gen(14);
+.img-icon-gen(12);
