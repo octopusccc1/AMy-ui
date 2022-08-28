@@ -1,3 +1,3 @@
-export default renderer;
+import marked from 'marked';
 declare const renderer: marked.Renderer<never>;
-import marked from "marked";
+export default renderer;

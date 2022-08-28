@@ -37,8 +37,8 @@ const Demo = (props: TDemo) => {
   const playerId = useMemo(() => `player-${((Math.random() * 1e9) >> 0).toString(36)}`, [])
   const renderSource = (value: string) => {
     new Promise(resolve => {
-      const args = ['React', 'ReactDOM']
-      const argv = [React, ReactDOM]
+      const args = ['React', 'ReactDOM', ...Object.keys(React)]
+      const argv = [React, ReactDOM, ...Object.keys(React).map(key => React[key])]
       props.dependencies &&
         Object.keys(props.dependencies).forEach(key => {
           args.push(key)

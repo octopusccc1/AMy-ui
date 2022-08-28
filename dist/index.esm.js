@@ -1,31 +1,5 @@
+import loadable from 'react-loadable';
 import React from 'react';
-import { Button } from 'antd';
-
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
-
-  if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-    enumerableOnly && (symbols = symbols.filter(function (sym) {
-      return Object.getOwnPropertyDescriptor(object, sym).enumerable;
-    })), keys.push.apply(keys, symbols);
-  }
-
-  return keys;
-}
-
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = null != arguments[i] ? arguments[i] : {};
-    i % 2 ? ownKeys(Object(source), !0).forEach(function (key) {
-      _defineProperty(target, key, source[key]);
-    }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) {
-      Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key));
-    });
-  }
-
-  return target;
-}
 
 function _defineProperty(obj, key, value) {
   if (key in obj) {
@@ -42,8 +16,21 @@ function _defineProperty(obj, key, value) {
   return obj;
 }
 
-var MyButton = function MyButton(props) {
-  return /*#__PURE__*/React.createElement(Button, _objectSpread2({}, props), "\u70B9\u51FB\u6211");
-};
+var ctx = require['context']('./components', true, /\.tsx$/);
 
-export { MyButton };
+var collection = ctx.keys().map(function (item) {
+  var _item$match;
+
+  return (_item$match = item.match(/.\/(.*?)\/index.tsx/)) === null || _item$match === void 0 ? void 0 : _item$match[1];
+}).reduce(function (pre, cur) {
+  return Object.assign(pre, _defineProperty({}, cur, loadable({
+    loader: function loader() {
+      return import("./components/".concat(cur));
+    },
+    loading: function loading() {
+      return /*#__PURE__*/React.createElement("div", null);
+    }
+  })));
+}, {});
+
+export default collection;

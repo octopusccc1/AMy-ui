@@ -3,7 +3,7 @@ import 'codemirror/keymap/sublime';
 import 'codemirror/addon/comment/comment';
 import './style/index.less';
 declare type TEditor = {
-    value: string;
+    defaultValue: string;
     onChange?: (value: string) => void;
 };
 declare const Editor: (props: TEditor) => JSX.Element;

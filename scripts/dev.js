@@ -15,16 +15,14 @@ reportURL({
 });
 
 new WebpackDevServer(bundler, {
-    contentBase: path.join(__dirname, '../src'),
-    publicPath: '/',
-    hot: true,
-    historyApiFallback: {
-        index: '/site/'
-    },
-    stats: { colors: true },
-    open: true,
+    // contentBase: path.join(__dirname, '../src'),
+    // publicPath: '/',
+    // static:path.join(__dirname, '../src'),
+    // hot: true,
+    // stats: { colors: true },
+    // open: true,
 }).listen(PORT, '0.0.0.0', error => {
-    if (error) {
-        throw error;
-    }
+    // if (error) {
+    //     throw error;
+    // }
 });

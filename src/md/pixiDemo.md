@@ -9,11 +9,18 @@
 :::demo 基本使用。
 
 ```js
-const Demo= () =>{
+const Demo = () => {
+ 
+
+   
+
+
   return (
-    <PiXiDemo/>
+    <div>
+     <PiXiDemo/>
+    </div>
   )
 }
 ```
-:::
 
+:::

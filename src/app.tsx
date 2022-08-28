@@ -7,11 +7,13 @@ import HomeLayout from "./views/homeLayout";
 
 const App = () => {
   return (
+    <div>
       <Router>
         <Routes>
           <Route path="*" element={<HomeLayout/>}></Route>
         </Routes>
       </Router>
+      </div>
   );
 };
 

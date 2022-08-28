@@ -1,1 +1,2 @@
-export { default as MyButton } from './components/MyButton';
+declare const collection: {};
+export default collection;
