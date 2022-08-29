@@ -10,9 +10,9 @@
 
 4.发布组件库文档
 
-####以下记录核心功能相关
+#### 以下记录核心功能相关
 
-#####1.创建项目 webpack 配置相关重要的点
+##### 1.创建项目 webpack 配置相关重要的点
 
 ```js
 //用来引入md文件的loader
@@ -24,13 +24,13 @@
 
 ...以及其他就是 webpack 的基础配置
 
-######用到的主要的第三方库:
+###### 用到的主要的第三方库:
  marked：可以把 markdown 的内容转换成 dom 字符串 
 <a href="https://github.com/markedjs/marked">传送门</a>
 
 codemirror:在线代码编辑器 <a href="https://github.com/codemirror/codemirror5">传送门</a>
 
-#####2.开发组件库代码
+##### 2.开发组件库代码
  -src   -app 项目入口
 
 ```tsx
