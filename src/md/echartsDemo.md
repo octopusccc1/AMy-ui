@@ -55,7 +55,7 @@ const Demo = () => {
         Object.assign(options, {
           series: [
             {
-              symbolSize: 10,
+              symbolSize: 6,
               data: data,
               type: 'scatter',
               itemStyle: {

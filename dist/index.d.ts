@@ -1,0 +1,5 @@
+export { default as MyButton } from './components/MyButton';
+export { default as PiXiDemo } from './components/PiXiDemo';
+export { default as EchartsDemo } from './components/EchartsDemo';
+export { default as WorkerDemo } from './components/WorkerDemo';
+export { default as SvgJsDemo } from './components/SvgJsDemo';

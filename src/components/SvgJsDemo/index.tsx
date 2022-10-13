@@ -39,8 +39,10 @@ const SvgJsDemo = () => {
       draw.line(x1, y1, x2, y2).stroke({ width: 1, color: isEmpty ? 'auto' : '#fff' })
     })
   }, [])
+
   return (
     <div>
+      
       <div id="svgDemo" style={{ backgroundColor: '#18243b', height: 300 }}></div>
       {/* <div className='map'>
 

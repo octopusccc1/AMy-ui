@@ -17,6 +17,18 @@ const Demo= () =>{
 ```
 :::
 
+:::demo 基本使用2。
+
+```js
+const Demo= () =>{
+  return(<Button type="primary" onClick={()=>{
+    alert(2)
+  }}>点击测试一下</Button>)
+}
+```
+:::
+
+
 ## API
 
 通过设置 Button 的属性来产生不同的按钮样式，推荐顺序为：`type` -> `shape` -> `size` -> `loading` -> `disabled`

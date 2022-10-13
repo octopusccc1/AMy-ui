@@ -17,6 +17,7 @@ const mdDemo = (props: any) => {
       const newDoc = doc.replace(
         /:::\s?(demo)\s?([^]+?):::/g,
         (a: any, p1: any, p2: any, offset: any) => {
+          console.log('p1',p1)
           const id = offset.toString(36)
           list.push([
             id,
@@ -50,7 +51,6 @@ const mdDemo = (props: any) => {
       }
     }
   }, [components])
-
   return <div dangerouslySetInnerHTML={{ __html: marked(html, { renderer }) }}></div>
 }
 

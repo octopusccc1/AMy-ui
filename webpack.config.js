@@ -89,7 +89,20 @@ module.exports = function (mode) {
         },
         {
           test: /\.(jpe?g|png|gif)(\?.+)?$/,
-          loader: 'file-loader'
+          exclude: /\.normal\.(jpe?g|png|gif)$/,
+          loader: 'file-loader',
+        },
+        {
+          test: /\.normal\.(jpe?g|png|gif)$/,
+          options:{
+            name:'[name].[ext]',
+          },
+         
+          loader: 'file-loader',
+        },
+        {
+          test: /\.json$/i,
+          type: "asset/resource",
         }
       ]
     },

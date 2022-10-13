@@ -59,8 +59,8 @@ const Demo = (props: TDemo) => {
         } else {
           code = transform(
             `${value}
-              ReactDOM.render(<Demo  />,
-              document.getElementById('${playerId}'))
+               ReactDOM.render(<Demo  />,
+               document.getElementById('${playerId}'))
               `,
             {
               presets: ['react', 'stage-1'],
